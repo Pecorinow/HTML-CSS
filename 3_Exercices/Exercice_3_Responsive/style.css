@@ -1,0 +1,200 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height:100vh;
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+    
+    a {
+        text-decoration: none;
+        color:black;
+        font-weight: 500;
+    }
+
+    a:hover {
+        color:rgb(156, 50, 66);
+        
+    }
+    
+    header {
+        display:flex;
+        flex-direction: row;
+        justify-items: space-evenly; /*Pourquoi pas d'espace sur les côtés ?*/
+        align-items: center;
+        width:100%;
+        padding-left:2%;
+        padding-right:2%;
+        
+        
+        nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+            gap:2%;
+        }
+
+        .divContact {
+            position: relative;
+            display:
+
+            i {
+                position: absolute;
+                top:0px;
+                left:0px;
+                display:none;
+
+                /*position absolue par rapport à la divContact*/
+            }
+        }
+    }
+    
+    main {
+        background-color: lightpink;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    
+        .titre {
+            background-image: url('images/banniere.jpg');
+            background-position: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+
+            /* @media (max-width : 1020px) {
+                background-size: cover;
+            } */
+            @media (max-width : 1020px) {
+                height:200px;
+            }
+
+
+            h1 {
+                color:white;
+                background: rgba(255, 255, 255, 0.15);
+                backdrop-filter: blur(20px);
+                border-radius: 1rem;
+                padding:20px;
+                font-size:3rem;
+                font-weight: 600;
+
+                @media (max-width : 1020px) {
+                    font-size: 2rem;
+                }
+            }
+        }
+    
+        .intro {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            gap:10px;
+            width:90%;
+            margin:auto;
+            margin-top: 40px;
+            margin-bottom: 40px;
+
+            .texte-intro {
+                background-color: white;
+                border-radius: 1rem;
+                padding: 30px;
+                max-width:40%;
+                text-align: start;
+
+
+                a {
+                    background-color: lightpink;
+                    padding:10px;
+                    border-radius: 50px;
+                    box-shadow: 0px 6px 2px rgba(156, 50, 66, 0.7)
+                }
+
+                @media (max-width : 1020px) {
+                    max-width:80%;
+                }
+            }
+
+            img {
+                max-width:50%;
+                border-radius:1rem;
+
+                @media (max-width : 1020px) {
+                    max-width:80%;
+                }
+            }
+
+            @media (max-width : 1020px) {
+                
+                flex-direction: column;
+                gap:20px;
+
+            }
+
+        }
+    }
+
+    footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items:center;
+        padding-left:2%;
+        padding-right:2%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+
+        .icones-rs {
+            font-size: 2rem;
+        }
+    }
+}
+
+@media (max-width:640px) {
+    body main .titre {
+        background-image: url('images/banniere_resp.jpg');
+        height:600px;
+
+        h1 {
+            font-size: 2rem;
+            text-align: center;
+        }
+    }
+
+    body main .intro .texte-intro {
+        max-width: 95%;
+    }
+
+    body main .intro img {
+        max-width: 95%;
+    }
+
+    body main .intro .texte-intro {
+        text-align: center;
+    }
+
+    body header nav, body header .divContact a {
+        display:none;
+    }
+
+    body header .divContact i {
+        display:flex; /* Pourquoi n'apparaît pas ? */
+    }
+
+
+
+
+
+
+}

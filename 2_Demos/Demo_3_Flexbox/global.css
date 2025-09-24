@@ -1,0 +1,79 @@
+
+
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    min-height:100vh; /* vh= Vue Height, = 100% de la hauteur du viewport
+    100vw : 100 de le view width
+    100vh : 100% de la view height
+    lvh sera la view height la plus large (sur mobile c'est utile pour le pas redimmensioner quand la barre url disparaît au scroll */
+}
+
+.container1 {
+    width: 800px;
+    height:300px;
+    background-color: lightgoldenrodyellow;
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    /* Les justify-content bizarres :
+    justify-content: space-between; /* centré mais avec les éléments aux extrémités qui touchent les extrémités */
+    justify-content: space-around; /* centré mais avec le même espace AUTOUR de chaque élément, donc les éléments du millieu ont un espace 2x plus grands que sur les côtés DONC */
+    justify-content: space space-evenly; /*pareil que soace-around mais avec le même espace entre chaque élément !*/
+    justify-content: center;
+
+    align-items : stretch; /* valeur par défaut, mais n'a pas d'effet si les éléments du container ont déjà une hauteur, comme c'est le cas ici*/
+
+    /*Met tout au début de l'axe secondaire : */
+    align-items : start;
+    align-items: baseline; /* baseline = 1e ligne du 1e contenu.
+    Ici, comme le 2e élément est plus haut que les deux autres, ils vont commencer à la même hauteur que le 2e mais pas aussi haut => décallage !  */
+    align-items: center;
+    gap: 2rem; /* ne marche pas avec les space-qlqch, seulement avec start, end et center*/
+
+    /** notions plus avancées :*/
+    /* permet le passage à la ligne si tous les éléments ne rentrent pas : */
+    flex-wrap:nowrap;
+
+    /* align-content : contrôle comment les éléments vont se comporter au passage à la ligne (ne marche qu'n cas de wrap) : */
+    align-content: start; /* la totalité à la fin de l'axe secondaire*/ 
+    align-content: end;
+    align-content: center;
+    align-content: space-between;
+    align-content: space-around;
+    align-content: space-evenly;
+
+}
+
+.elem {
+    background: linear-gradient(#833AB4, #FD1D1D,#FCB045);
+    padding:0.5rem;
+    width:fit-content; /* = la largeur doit fit le contenu, padding inclus*/
+    border: 2px solid darkblue;
+
+    height:fit-content;
+    width:125px; 
+    /*Si on laisse comme ça, le fit content + la width bien définie vont rétrécir et ecraser un peu les éléments  DONC :*/
+    flex-shrink:0; /*empêche les éléments de rétrécir*/
+
+
+}
+
+.elem:nth-child(2) {
+    font-size: 1.3rem;
+    /** Pour replacer un seul élément : */
+    align-self: stretch; /*permet de manipuler l'emplacement d'un seul élément par rapport aux autres, ne marche qu'en cas de nowrap*/
+    /** Pour changer l'ordre des éléments */
+    order: -6; /* va prendre l'élément et le mettre à la place donnée, soit à partir du début (si en positif) soit de la fin (si en négatif comme ici)*/
+    /* À quoi ça sert ? À manipuler l'ordre des éléments en responsive pour le passage sur téléphone, p.ex. décider que l'élément passe devant l'élément 2 sur tél.*/
+}
+
+

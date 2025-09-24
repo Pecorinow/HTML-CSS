@@ -1,0 +1,44 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-light: #98d9c6 ;
+    --color-medium: #54b397 ;
+    --color-dark: #197d5f ;
+}
+
+body {
+    display:flex;
+    flex-direction: column;
+    min-height:100vh; /*On met la vh au minimum car sur téléphone on aura parfois besoin que le body dépasse la vh pour permettre de scroller*/
+}
+
+header {
+    background-color: blueviolet;
+    flex-grow: 1; /** flex-grow = par combien de fois l'élément peut grandir pour remplir l'espace restant de son contenant.
+    Par défaut à 0 -> pas agrandissable;
+    flex-grow:2 = 2x plus agrandissable qu'un élément à 1;
+    etc...*/
+    padding:2rem;
+    text-align: center;
+}
+
+main {
+    background-color: aquamarine;
+    flex-grow: 100; /* = par combien de fois l'élément peut grandir pour remplir l'espace restant de son contenant */
+}
+
+footer {
+    background-color: brown;
+    flex-grow: 1;
+    padding:2rem;
+    text-align: center;
+}
+
+/**flex-shrink = par combien de fois un élément est rétracissable.
+Par défaut à 1 -> tous les éléments sont rétrécissables par défaut.
+flex-shrink:2 -> 2x plus rétrécissable qu'un élément à 1. 
+

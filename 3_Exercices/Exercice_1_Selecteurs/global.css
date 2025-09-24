@@ -1,0 +1,68 @@
+/*
+- sans id ni classe, uniquement avec les sélecteurs avancés vus :
+- coin supérieur gauche n'a pas de bordure
+- ligne tout en haut d'une couleur différente
+- 1ère case de chaque ligne : le texte est plus gros et la couleur - plus foncée
+- 1 ligne sur 2 d'une couleur différente (image jaune)
+- Si case vide -> fond gris
+- Bonus : les boutons appeler et envoyer mail seront présents dans chaque dernière cases mais on les cache si les cases tel et/ou email sont vides
+*/
+
+
+table {
+    border-collapse:collapse;
+}
+
+td {
+    border:1px solid black;
+    padding:10px;
+}
+
+thead tr td:first-of-type {
+    border:none;
+    background-color: white;
+}
+
+thead tr {
+    background-color: coral;
+}
+
+td:first-of-type {
+    font-weight: bold;
+}
+
+tbody tr:nth-of-type(odd) {
+    background-color: #bae8bf;
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: beige;
+}
+
+tbody tr:nth-of-type(odd) td:first-of-type {
+    background-color: #469c4f;
+}
+
+tbody tr:nth-of-type(even) td:first-of-type {
+    background-color:#ccc293;
+}
+
+tbody td:empty {
+    background-color: #99ada0;
+}
+
+
+/* td:nth-of-type(4):empty~td button:first-of-type {
+    visibility: hidden;
+}
+
+td:nth-of-type(5):empty~td button:last-of-type {
+    visibility: hidden;
+}  */
+/* ! JE SUIS UN GENIE */
+/* Il faut sélectionner la cellule voisine de la 4e ou 5e cellule de la rangée qui possède un boiuton, et spécifier qu'on bveut le premier ou le dernier bouton.*/
+td:nth-of-type(4):empty~td button:first-of-type, td:nth-of-type(5):empty~td button:last-of-type {
+    visibility: hidden;
+    /* display: none; */
+
+}
