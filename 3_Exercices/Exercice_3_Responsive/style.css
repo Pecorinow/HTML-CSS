@@ -26,9 +26,11 @@ body {
     header {
         display:flex;
         flex-direction: row;
-        justify-items: space-evenly; /*Pourquoi pas d'espace sur les côtés ?*/
+        justify-items: space-between; /*Pourquoi pas d'espace sur les côtés ?*/
         align-items: center;
-        width:90%;
+        width:98%;
+        margin:auto;
+        gap:30px;
         padding-left:2%;
         padding-right:2%;
         
@@ -47,17 +49,19 @@ body {
             display: flex;
             flex-direction: row;
             justify-content: end;
+            /*TODO mettre un menu déroulant caché qui osuvre si on clique dessus*/
 
             i {
                 position: absolute;
-                top:-25px;
-                left:0px;
-                font-size: 3rem;
+                top: -25px;
+                
+                font-size: 2.5rem;
                 color:rgb(156, 50, 66);
                 display:none;
-                
+            }
 
-                /*position absolue par rapport à la divContact*/
+            i:hover {
+
             }
         }
     }
@@ -105,7 +109,7 @@ body {
             flex-direction: row;
             justify-content: space-evenly;
             align-items: center;
-            gap:10px;
+            gap:30px;
             width:90%;
             margin:auto;
             margin-top: 40px;
@@ -117,6 +121,10 @@ body {
                 padding: 30px;
                 max-width:40%;
                 text-align: start;
+
+                strong {
+                    color:rgb(156, 50, 66);
+                }
 
 
                 a {
@@ -131,10 +139,14 @@ body {
                 }
             }
 
-            img {
-                max-width:50%;
-                border-radius:1rem;
+            picture {
+                margin:auto;
 
+                img {
+                    max-width: 100%;
+                    border-radius:1rem;
+    
+            }
                 @media (max-width : 1020px) {
                     max-width:80%;
                 }
@@ -156,8 +168,8 @@ body {
         justify-content: space-between;
         align-items:center;
         width:90%;
-        padding-left:2%;
-        padding-right:2%;
+        margin:auto;
+        
         padding-top: 1%;
         padding-bottom: 1%;
 
@@ -168,6 +180,18 @@ body {
 }
 
 @media (max-width:640px) {
+    body header nav {
+        display:none;
+    }
+
+    body header .divBurger i {
+        display:flex; /* Pourquoi n'apparaît pas ? */
+    }
+
+    body header {
+        justify-content: space-between;
+    }
+
     body main .titre {
         background-image: url('images/banniere_resp.jpg');
         height:600px;
@@ -189,23 +213,9 @@ body {
     body main .intro .texte-intro {
         text-align: center;
     }
-
-    body header nav {
-        display:none;
-    }
-
-    body header .divBurger i {
-        display:flex; /* Pourquoi n'apparaît pas ? */
-    }
-
-    body header {
-        justify-content: space-evenly;
-        gap:60%;
-    }
+}
 
 
-
-
-
+@media (max-width : 1020px) {
 
 }
