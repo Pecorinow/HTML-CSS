@@ -1,0 +1,135 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-light : lightpink;
+    --color-medium : rgb(156, 50, 66);
+}
+
+body {
+    min-height:100vh;
+    background-color: white;
+    display:flex;
+    flex-direction: column;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+    flex-grow: 1;
+    
+    a {
+        text-decoration: none;
+        color:black;
+        font-weight: 500;
+    }
+
+    a:hover {
+        color:var(--color-medium);
+        
+    }
+    
+    header {
+        display:flex;
+        flex-direction: row;
+        justify-items: space-between; /*Pourquoi pas d'espace sur les côtés ?*/
+        align-items: center;
+        width:98%;
+        margin:auto;
+        gap:30px;
+        padding-left:2%;
+        padding-right:2%;
+        
+        
+        nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+            gap:2%;
+        }
+
+        .divBurger {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            /*TODO mettre un menu déroulant caché qui s'ouvre si on clique dessus*/
+
+            i {
+                position: absolute;
+                top: -25px;
+                font-size: 2.5rem;
+                color:var(--color-medium);
+                display:none;
+            }
+        }
+    }
+
+    main {
+        background-color: var(--color-light);
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+
+        section {
+            width:90%;
+            margin:auto;
+        }
+
+        .titre {
+            
+
+            h1 {
+                text-align: center;
+            }
+        }
+
+        .grille-pensionnaires {
+            display: flex;
+            flex-direction:column;
+            justify-content: center;
+            align-items: center;
+            gap:20px;
+
+            .rang-pensionnaires {
+                display:flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+                gap: 20px;
+
+                .pensionnaire {
+                    background-color: aqua;
+                    display: flex;
+                    flex-direction:column;
+                    justify-content: center;
+                    align-items: center;
+                    gap:15px;
+
+                    h2 {
+                        font-size: 1.5rem;
+                    }
+                }
+            }
+
+        }
+    }
+
+    footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items:center;
+        width:90%;
+        margin:auto;
+        
+        padding-top: 1%;
+        padding-bottom: 1%;
+
+        .icones-rs {
+            font-size: 2rem;
+        }
+    }
+}
