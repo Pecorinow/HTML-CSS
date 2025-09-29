@@ -11,6 +11,7 @@
 
 body {
     min-height:100vh;
+    min-width: 100vw;
     background-color: white;
     display:flex;
     flex-direction: column;
@@ -20,10 +21,10 @@ body {
     
     a {
         font-family: 'Montserrat', sans-serif;
-        font-size: 1rem;
         text-decoration: none;
         color:black;
         font-weight: 500;
+        font-size: 1.1rem;
     }
 
     a:hover {
@@ -58,11 +59,14 @@ body {
             justify-content: end;
             /*TODO mettre un menu déroulant caché qui s'ouvre si on clique dessus*/
 
-            i {
+            button {
                 position: absolute;
+                right:+10px;
                 top: -25px;
                 font-size: 2.5rem;
                 color:var(--color-medium);
+                border:none;
+                background-color: white;
                 display:none;
             }
         }
@@ -112,6 +116,7 @@ body {
                 padding: 30px;
                 max-width:40%;
                 text-align: start;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 
                 strong {
                     color:var(--color-medium);
@@ -142,6 +147,7 @@ body {
                 img {
                     max-width: 100%;
                     border-radius:1rem;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
                 }
             }
         }
@@ -169,16 +175,35 @@ body {
 }
 
 @media (max-width:640px) {
+    body header {
+        position: relative;
+        justify-content: space-between;
+    }
+    
+    body header .hide {
+        display:none;
+    }
+
+    body header .show {
+        position: absolute;
+        bottom:-100%;
+        right:+20px;
+        background-color: white;
+        padding:20px;
+        display:flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        gap:20px;
+
+    }
+    
     body header nav {
         display:none;
     }
 
-    body header .divBurger i {
-        display:flex; /* Pourquoi n'apparaît pas ? */
-    }
-
-    body header {
-        justify-content: space-between;
+    body header .divBurger button {
+        display:flex; 
     }
 
     body main .titre {
@@ -189,6 +214,15 @@ body {
             font-size: 2rem;
             text-align: center;
         }
+    }
+
+    body footer {
+            display:flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            text-align:center;
+            gap:5px; 
     }
 
     body main .intro {

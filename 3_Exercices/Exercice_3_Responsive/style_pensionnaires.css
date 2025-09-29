@@ -11,6 +11,7 @@
 
 body {
     min-height:100vh;
+    min-width: 100vw;
     background-color: white;
     display:flex;
     flex-direction: column;
@@ -22,6 +23,7 @@ body {
         text-decoration: none;
         color:black;
         font-weight: 500;
+        font-size: 1.1rem;
     }
 
     a:hover {
@@ -48,6 +50,7 @@ body {
             align-items: center;
             flex-grow: 1;
             gap:2%;
+            
         }
 
         .divBurger {
@@ -57,11 +60,14 @@ body {
             justify-content: end;
             /*TODO mettre un menu déroulant caché qui s'ouvre si on clique dessus*/
 
-            i {
+            button {
                 position: absolute;
+                right:+10px;
                 top: -25px;
                 font-size: 2.5rem;
                 color:var(--color-medium);
+                border:none;
+                background-color: white;
                 display:none;
             }
         }
@@ -116,6 +122,7 @@ body {
                     gap:15px;
                     width: 360px;
                     margin-bottom: 30px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 
                     h2 {
                         font-size: 1.5rem;
@@ -149,17 +156,37 @@ body {
     }
 }
 
+@media (max-width : 1020px) {
+    body main .grille-pensionnaires .rang-pensionnaires {
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+    }
+}
+
 @media (max-width:640px) {
-    body header nav {
+    header {
+        justify-content: space-between;
+    }
+    
+    body header .hide {
         display:none;
     }
 
-    body header .divBurger i {
-        display:flex; /* Pourquoi n'apparaît pas ? */
+    body header .show {
+        position: absolute;
+        display:flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        gap:20px;
+
     }
 
-    body header {
-        justify-content: space-between;
+    body header .divBurger button {
+        display:flex; /* Pourquoi n'apparaît pas ? */
     }
 
     body main .titre h1 {
@@ -182,16 +209,6 @@ body {
         img {
             width:90%;
         }
-    }
-}
-
-@media (max-width : 1020px) {
-    body main .grille-pensionnaires .rang-pensionnaires {
-                display:flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 20px;
     }
 }
 
