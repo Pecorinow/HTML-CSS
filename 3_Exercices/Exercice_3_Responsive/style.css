@@ -91,6 +91,7 @@ body {
                 padding:20px;
                 font-size:3rem;
                 font-weight: 600;
+                
             }
         }
     
@@ -160,6 +161,10 @@ body {
         .icones-rs {
             font-size: 2rem;
         }
+
+        .fa-solid:hover, .fa-brands:hover {
+            color : var(--color-medium);
+        }
     }
 }
 
@@ -186,12 +191,15 @@ body {
         }
     }
 
+    body main .intro {
+        width:100%;
+    }
     body main .intro .texte-intro {
-        max-width: 95%;
+        max-width: 100%;
     }
 
     body main .intro img {
-        max-width: 95%;
+        max-width: 100%;
     }
 
     body main .intro .texte-intro {
