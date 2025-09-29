@@ -49,7 +49,7 @@ body {
             justify-content: center;
             align-items: center;
             flex-grow: 1;
-            gap:2%;
+            gap:4%;
         }
 
         .divBurger {
@@ -95,6 +95,7 @@ body {
                 padding:20px;
                 font-size:3rem;
                 font-weight: 600;
+                z-index: 1;
                 
             }
         }
@@ -174,6 +175,8 @@ body {
     }
 }
 
+/** -------Media query max-width:640px-------- */
+
 @media (max-width:640px) {
     body header {
         position: relative;
@@ -186,20 +189,16 @@ body {
 
     body header .show {
         position: absolute;
-        bottom:-100%;
-        right:+20px;
+        bottom:-165%;
+        right: -5px;
         background-color: white;
-        padding:20px;
+        padding:10px 20px 50px 50px;
         display:flex;
         flex-direction: column;
         justify-content: start;
         align-items: start;
         gap:20px;
-
-    }
-    
-    body header nav {
-        display:none;
+        z-index: 100;
     }
 
     body header .divBurger button {
@@ -217,12 +216,12 @@ body {
     }
 
     body footer {
-            display:flex;
-            flex-direction: column;
-            justify-content: space-around;
-            align-items: center;
-            text-align:center;
-            gap:5px; 
+        display:flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        text-align:center;
+        gap:5px; 
     }
 
     body main .intro {
@@ -240,7 +239,8 @@ body {
         text-align: center;
     }
 }
-
+/**-----------------------------------------------
+/** -------Media query max-width:1020px-------- */
 
 @media (max-width : 1020px) {
     body main .titre {
