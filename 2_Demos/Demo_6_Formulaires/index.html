@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo 6 - Formulaires</title>
+</head>
+<body>
+    
+    <h1></h1>
+    <main>
+
+        <form method="post" action="javascript:void(0)" enctype=""></form> 
+        <!--* Method : 
+
+        - soit "get" : les données sont envoyées via l'url.
+            Inconvénients nombreux :
+            - 255 caractères max
+            - Sécurité douteuse : tout ce qui se trouve dans l'url est lisible et interprétable.
+        - soit "post" : un objet JS est créé, avec comme propriété le  nom du champ et la valeur associée.
+        Ex : {lastname : 'Poveda', password : 'Hola'}
+            => Il faudra du JS pour l'utiliser.
+            => Plus sécurisé.
+        -->
+        
+        <!--* Action :
+        Surtout utilisé en PHP : on y met le script que doit traiter notre formulaire.
+        Si on écrit "javascript:void(0)" dedans, cela permet de déscativer l'action.
+        -->
+
+        <!--* Enctype :
+        Type d'encryption des données.
+        - Par défaut : "text-plain",  pour envoyer du JSON, des objets JS,, infos textuelles simples. On le remplace par multipart pour envoyer des fichiers.
+        - "multipart/form-data" : sert à envoyer des fichiers.
+        -->
+
+        <!--* input type text -->
+        <div>
+            <label for="lastname">Nom</label>
+                <input
+                id="lastname"
+                name="lastname"
+                placeholder="Nom"
+                type="text">
+        </div>
+
+        <div>
+            <label for="firstname">Prénom</label>
+                <input
+                id="firstname"
+                name="firstname"
+                placeholder="Prénom"
+                type="text">
+        </div>
+
+        <!--* input type number -->
+        <div>
+            <label for="favNb">Nombre préféré</label>
+                <input
+                id="favNb"
+                name="favNb"
+                placeholder="42"
+                type="number">
+        </div>
+
+        <!--* input type password -->
+        <div>
+            <label for="password">Mot de passe</label>
+                <input
+                id="password"
+                name="password"
+                placeholder="mot de passe"
+                type="password">
+        </div>
+
+        <!--* input type email :
+        Vérifie qu'on a bien mis un format mail. -->
+        <div>
+            <label for="email">Nom</label>
+                <input
+                id="email"
+                name="email"
+                placeholder="coucou@hello.be"
+                type="email">
+        </div>
+    
+        <!--* input type tel :
+        Sur mobile, ouvre le pavé numérique.
+        Ne vérifie pas le format à cause de tou sles formats de numéros différents selon les pays;-->
+        <div>
+            <label for="email">Numéro de téléphone</label>
+                <input
+                id="tel"
+                name="tel"
+                placeholder="+32222222222"
+                type="tel">
+        </div>
+
+        <!--* input type file :
+        - attribut multiple accept : permet de sélectionner plusieurs fichiers à la fois, mais ne permet pas de modifier sa sélection par après, si on veut la modifier il faut la recommencer. 
+        => Souvent on les customise ou on en prend des tout faits dans des librairies.
+        Dans les "", préciser le type et/ou le format de fichier qu'on accepte. -->
+        <div>
+            <label for="avatar">Votre avatar</label>
+                <input
+                id="avatar"
+                name="avatar"
+                placeholder=""
+                type="file"
+                multiple accept="image/png">
+        </div>
+
+        <!--* input type date :
+        => Souvent on les customise ou on en prend des tout faits dans des librairies.
+        On les récupère au format date américain : année / moi / jour.
+         -->
+        <div>
+            <label for="birthday">Date de naissance</label>
+                <input
+                id="birthday"
+                name="birthday"
+                type="date">
+        </div>
+
+        <!--* input type checkbox :
+        Rôle de la check box : svaoir si une valeur a été cochée ou pas, données de type VRAI ou FALSE.-->
+        <div>
+            <label for="conditions">J'accepte les conditions de vente</label>
+                <input
+                id="conditions"
+                name="conditions"
+                type="checkbox">
+        </div>
+
+        <!--* input type radio :
+        - attribut name : sert à relier les différents inputs d'une même question => permet que quand on coche un des inputs, les autres sont décochés automatiquement.
+        - attribut value : permet de récupérer la valeur de l'input
+        -->
+        <div>
+            <p>Quel est votre genre ?</p>
+
+            <label for="homme">Homme</label>
+                <input
+                id="homme"
+                name="genre"
+                value="h"
+                type="radio">
+
+            <label for="femme">Femme</label>
+                <input
+                id="femme"
+                name="genre"
+                value="f"
+                type="radio">
+
+            <label for="autre">Autre</label>
+                <input
+                id="autre"
+                name="genre"
+                value="au"
+                type="radio">
+        </div>
+
+        <!--* textarea -->
+        <div>
+            <label for="com">Commentaires</label>
+                <textarea
+                id="com"
+                name="comment"
+                placeholder="Bonjour !"
+                rows="5";
+                type="text">Je vous écris car </textarea>
+        </div>
+
+        <!--* select -->
+        <div>
+            <label for="techno">Commentaires</label>
+                <select
+                id="techno"
+                name="techno"></select>
+                
+                <option selected value="">Choisissez une option</option>
+                <!--Pour la première option, on la laisse souvent sa valeur vide car elle sert souvent de placeholder, elle est choisie par défaut via selected mais n'est pas destinée à être sélectionnée.
+                hidden : sert à cacher une option dans la liste déroulante.
+                -->
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="js">JAVASCRIPT</option>
+                <option value="fig">FIGMA</option>
+                
+
+            <input type="submit" value="Envoyer">
+
+    </main>
+
+</body>
+</html>
