@@ -52,7 +52,14 @@ body {
             flex-grow: 1;
             gap: 2%;
 
+            
+            a:hover {
+                position:relative;
+                bottom: 3px;
+            }
         }
+
+        
 
         .divBurger {
             position: relative;
@@ -79,6 +86,7 @@ body {
         display: flex;
         flex-direction: column;
         flex-grow: 1;
+        width:100%;
 
         section {
             width: 90%;
@@ -99,7 +107,7 @@ body {
             }
         }
 
-        .grille-pensionnaires {
+        /* .grille-pensionnaires {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -124,15 +132,44 @@ body {
                     margin-bottom: 30px;
                     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 
-                    @media (max-width:920px) and (orientation:landscape) {
-                        width: 500px;
-
+                    @media (max-width:950px) and (orientation:landscape) {
+                        width: 600px;
                         flex-direction: row;
                         justify-content: center;
                         align-items: center;
-                        /*!Ne fonctionne pas je vais pleurer */
 
+                    } */
+
+
+        .grille-pensionnaires {
+                display:flex;
+                flex-direction:row;
+                justify-content: space-evenly;
+                align-items:stretch;
+                gap:30px;
+                flex-wrap:wrap;
+                align-content:center;
+            
+                .pensionnaire {
+                    background-color: white;
+                    padding: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 15px;
+                    width: 360px;
+                    margin-bottom: 30px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+
+                    @media (max-width:950px) and (orientation:landscape) {
+                        width: 600px;
+                        flex-direction: row;
+                        justify-content: center;
+                        align-items: center;
                     }
+                }
+        }
+                    
 
                     .infos-pens {
                         display: flex;
@@ -149,9 +186,9 @@ body {
                             font-weight: bold;
                         }
                     }
-                }
-            }
-        }
+                
+            
+        
     }
 
     footer {
@@ -207,6 +244,10 @@ body {
         display: flex;
     }
 
+    body header .divBurger button:hover {
+        font-size: 2.4rem;
+    }
+
     body main .titre h1 {
         font-size: 2rem;
         text-align: center;
@@ -221,7 +262,7 @@ body {
         gap: 5px;
     }
 
-    body main .grille-pensionnaires .rang-pensionnaires .pensionnaire {
+    body main .grille-pensionnaires .pensionnaire {
         width: 90%;
 
         img {
@@ -237,14 +278,13 @@ body {
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        /*!Ne fonctionne pas je vais pleurer */
     }
 }
 
 /** -------Media query max-width:1020px-------- */
 
 @media (max-width : 1020px) {
-    body main .grille-pensionnaires .rang-pensionnaires {
+    body main .grille-pensionnaires  {
         display: flex;
         flex-direction: column;
         justify-content: center;
