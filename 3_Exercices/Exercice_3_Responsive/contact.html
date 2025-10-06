@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style_contact.css">
+    <script defer src="./main.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Adopte un vieux | Contact</title>
+    
+</head>
+<body>
+    <header>
+        <div class="divLogo">
+            <img src="images/logo.png" alt="Stylish old man smiling">
+        </div>
+
+        <nav id="nav" class="hide">
+            <a href="./index.html">Accueil</a>
+            <a href="./pensionnaires.html">Nos pensionnaires</a>
+            <a href="">Contact</a>
+        </nav>
+
+        <div class="divBurger">
+            <button id="menu"><i class="fa-solid fa-bars"></i></button> <!-- position absolue par rapport à la divContact -->
+        </div>
+    </header>
+
+    <main>
+        <section class="titre">
+            <h1>Contactez-nous !</h1>
+        </section> 
+
+        <section class="formulaire">
+            <p><span class="intro-form">Vous avez des questions concernant notre association ? L'un de nos pensionnaires vous a tapé dans l'oeil ?</span><br>
+            Remplissez notre formulaire de contact et nous reviendrons vers vous dans les plus brefs délais !</p>
+            <!--* input type text -->
+            <div>
+                <label class="questions" for="lastname">Nom</label><br>
+                    <input
+                    class="input prenom"
+                    id="lastname"
+                    name="lastname"
+                    placeholder="Bern"
+                    type="text">
+            </div>
+
+            <div>
+                <label class="questions" for="firstname">Prénom</label><br>
+                    <input
+                    class="input nom"
+                    id="firstname"
+                    name="firstname"
+                    placeholder="Stéphane"
+                    type="text">
+            </div>
+
+            <!--* input type email :
+            Vérifie qu'on a bien mis un format mail. -->
+            <div>
+                <label class="questions" for="email">E-mail</label><br>
+                    <input
+                    class="input email"
+                    id="email"
+                    name="email"
+                    placeholder="coucou@hello.be"
+                    type="email">
+            </div>
+
+            <!--* input type tel :
+            Sur mobile, ouvre le pavé numérique.
+            Ne vérifie pas le format à cause de tou sles formats de numéros différents selon les pays;-->
+            <div>
+                <label class="questions" for="tel">Numéro de téléphone</label><br>
+                    <input
+                    class="input tel"
+                    id="tel"
+                    name="tel"
+                    placeholder="+32222222222"
+                    type="tel">
+            </div>
+
+    <!--* input type radio :
+            - attribut name : sert à relier les différents inputs d'une même question => permet que quand on coche un des inputs, les autres sont décochés automatiquement.
+            - attribut value : permet de récupérer la valeur de l'input
+            -->
+            <div>
+                <p class="questions">Avez-vous déjà adopté un pensionnaire chez nous ?</p>
+
+                <label for="yes">Oui</label>
+                    <input
+                    class="input radio"
+                    id="yes"
+                    name="deja_adopte"
+                    value="y"
+                    type="radio">
+
+                <label for="no">Non</label>
+                    <input
+                    id="no"
+                    name="deja_adopte"
+                    value="n"
+                    type="radio">
+
+            </div>
+
+            <!--* select -->
+            <div>
+                <label class="questions" for="know">Comment avez-vous entendu parler de notre association ?</label>
+                    <select
+                    class="input select"
+                    id="know"
+                    name="know">
+                    
+                    <option selected value="">Choisissez une option</option>
+                    <!--Pour la première option, on la laisse souvent sa valeur vide car elle sert de placeholder, elle est choisie par défaut via selected mais n'est pas destinée à être sélectionnée.
+                    hidden : sert à cacher une option dans la liste déroulante.
+                    -->
+                    <option value="rs">Réseaux sociaux</option>
+                    <option value="bao">Bouche à oreille</option>
+                    <option value="js">Publicité dans le journal</option>
+                    <option value="fig">Autre</option>
+
+                    </select>
+            </div>
+
+            <!--* textarea -->
+            <div>
+                <label class="questions" for="com">Posez ici vos questions ou commentaires :</label><br>
+                    <textarea
+                    class="input textarea"
+                    id="com"
+                    name="comment"
+                    placeholder="Bonjour !"
+                    rows="5";
+                    type="text">Je vous écris car </textarea>
+            </div>
+
+            <!--* input type checkbox :
+            Rôle de la check box : savoir si une valeur a été cochée ou pas, données de type VRAI ou FALSE.-->
+            <div>
+                <input
+                class="input checkbox"
+                    id="conditions"
+                    name="conditions"
+                    type="checkbox">
+                <label for="conditions">J'accepte que mes données soient utilisées à des fins statistiques et blablabla</label>
+            </div>
+
+            <div>
+                <input class="input-envoyer" type="submit" value="Envoyer">
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="credits">
+            ©Caroline Poveda
+        </div>
+
+        <div class="icones-rs">
+            <i class="fa-solid fa-envelope"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-square-facebook"></i>
+            <i class="fa-brands fa-tiktok"></i>
+        </div>
+    </footer>
+
+</body>
+</html>
