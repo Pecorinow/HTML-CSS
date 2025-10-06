@@ -34,7 +34,7 @@ body {
     header {
         display:flex;
         flex-direction: row;
-        justify-items: space-between; /*Pourquoi pas d'espace sur les côtés ?*/
+        justify-items: space-between;
         align-items: center;
         width:98%;
         margin:auto;
@@ -103,16 +103,33 @@ body {
         }
 
         .formulaire {
+            /* Pourquoi le Margin restait en blanc -> Pcq le margin:2rem se faisait annuler par le margin:auto qui venait après =>
+            Les propriétés placées après annulent celles placées avant !*/
             background-color: white;
             padding: 60px;
             width: 610px;
             margin:auto;
+            margin-bottom: 2rem;
             display:flex;
             flex-direction: column;
             justify-items: start;
             align-items: start;
             gap:1rem;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            position: relative;            
+            
+
+            .collant1 {
+                position: absolute;
+                top:-40px;
+                left:-30px;
+            }
+
+            .collant2 {
+                position: absolute;
+                bottom:-30px;
+                right:-35px;
+            }
 
             .intro-form {
                 color: var(--color-medium);
@@ -130,6 +147,7 @@ body {
             
                 .input {
                     border: var(--color-medium) solid 1.7px;
+                    border-radius: 2px;
                     background-color: rgba(255, 182, 193, 0.3);
                     padding-left: 5px;
                     font-family: 'Montserrat', sans-serif;
@@ -168,6 +186,18 @@ body {
                     box-shadow: 0px 4px 2px rgba(156, 50, 66, 0.7);
                 }
 
+            }
+
+            label {
+                position: relative;
+            }
+
+            label:has(~*:required)::after{ /* = pour tout label qui a (has) tout voisin direct (~*) avec un attribut required -> juste après (::after), ajouter ce qui est entre {} */
+                content: "*" / "requis";
+                color :violet;
+                position: absolute;
+                top : 0;
+                transform: translateX(0.5rem);
             }
         }
     }
@@ -225,6 +255,11 @@ body {
     body main .titre h1 {
         font-size: 2rem;
         text-align: center;
+    }
+
+    body main .formulaire {
+        width:85%;
+        padding: 30px;
     }
 
     body footer {

@@ -159,12 +159,18 @@ body {
                     width: 360px;
                     margin-bottom: 30px;
                     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+                    position :relative;
 
                     @media (max-width:950px) and (orientation:landscape) {
                         width: 600px;
                         flex-direction: row;
                         justify-content: center;
                         align-items: center;
+                    }
+
+                    .collant {
+                        position:absolute;
+                        top:-40px;
                     }
                 }
         }
@@ -264,9 +270,10 @@ body {
     body main .grille-pensionnaires .pensionnaire {
         width: 90%;
 
-        img {
+        .img-pens {
             width: 90%;
         }
+        
     }
 }
 
